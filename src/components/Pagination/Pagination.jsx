@@ -11,8 +11,6 @@ export const Pagination = () => {
     setCurrentPage(page);
   };
 
-  console.log(pageNumbers);
-
   return (
     <PaginationContent>
       <PaginationList>

@@ -4,11 +4,11 @@ import { useRecoilState } from "recoil";
 import { booksCopyState, booksState, searchValueState } from "../../atoms";
 
 import searchIcon from "../../assets/search.svg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const Search = () => {
-  const [, setBooks] = useRecoilState(booksState);
-  const [booksCopy] = useRecoilState(booksCopyState);
+  const [books, setBooks] = useRecoilState(booksState);
+  const [booksCopy] = useState(books);
   const [searchValue, setSearchValue] = useRecoilState(searchValueState);
 
   const handleChangeOnInput = (e) => {
@@ -29,9 +29,9 @@ export const Search = () => {
     });
   };
 
-  // useEffect(() => {
-  //   doSearch();
-  // }, [searchValue]);
+  useEffect(() => {
+    doSearch();
+  }, [searchValue]);
 
   return (
     <SearchContent>

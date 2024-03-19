@@ -84,8 +84,8 @@ const BooksContent = styled.div`
 const BooksList = styled.ul`
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
+  padding: 0 0 0 62px;
 `;
 
 const BooksListItem = styled.li`
