@@ -29,22 +29,19 @@ export const Books = () => {
   }, [books, pageSize]);
 
   useEffect(() => {
-    console.log(totalPages());
     const numbers = [];
     for (let i = 1; i <= totalPages(); i++) {
       numbers.push(i);
     }
     setPageNumbers(numbers);
-  }, [totalPages]);
+  }, [totalPages, setPageNumbers]);
 
   useEffect(() => {
     const startIndex = (currentPage - 1) * pageSize;
     const endIndex = Math.min(startIndex + pageSize - 1, books.length - 1);
 
     setCurrentPageData(books.slice(startIndex, endIndex + 1));
-  }, [pageSize, books, currentPage]);
-
-  console.log(currentPage);
+  }, [pageSize, books, currentPage, setCurrentPageData]);
 
   return (
     <BooksContent>
@@ -86,20 +83,19 @@ const BooksList = styled.ul`
   align-items: center;
   flex-wrap: wrap;
   padding: 0 0 0 62px;
+
+  @media (max-width: 600px) {
+    padding: 24px;
+  }
 `;
 
 const BooksListItem = styled.li`
   background-color: var(--color-white-1);
   width: 400px;
   height: 700px;
-
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
   margin: 20px;
-
-  /* &:not(:first-child) {
-    margin-left: 24px;
-  } */
 `;
 
 const BooksListItemPicture = styled.div`
@@ -136,7 +132,6 @@ const BooksListItemInfo = styled.div`
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
-  align-items: end;
 `;
 
 const Column = styled.div``;

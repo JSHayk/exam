@@ -54,7 +54,6 @@ export const Search = () => {
 const SearchContent = styled.div`
   display: flex;
   justify-content: end;
-  padding-right: 76px;
 `;
 
 const SearchField = styled.div`
@@ -68,6 +67,7 @@ const SearchInput = styled.div`
     border-radius: 8px;
     padding: 8px;
     padding-right: 43px;
+    border: solid 1px var(--color-black-1);
   }
 `;
 
