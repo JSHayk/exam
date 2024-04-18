@@ -91,9 +91,11 @@ const BooksList = styled.ul`
 const BooksListItem = styled.li`
   background-color: var(--color-white-1);
   width: 400px;
+  height: 700px;
+
   border-radius: 8px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.12);
-  margin: 12px;
+  margin: 20px;
 
   /* &:not(:first-child) {
     margin-left: 24px;
@@ -106,6 +108,7 @@ const BooksListItemPicture = styled.div`
   > img {
     border-radius: 8px 8px 0 0;
     width: 100%;
+    height: 520px;
   }
 `;
 

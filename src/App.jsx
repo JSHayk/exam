@@ -5,11 +5,13 @@ import { RecoilRoot } from "recoil";
 import { Books } from "./components/Books";
 import { Search } from "./components/Search";
 import { Pagination } from "./components/Pagination";
+import Logo from "./components/Logo/Logo";
 
 export const App = () => {
   return (
     <RecoilRoot>
       <Self>
+        <Logo />
         <Search />
         <Books />
         <Pagination />
